@@ -15,7 +15,7 @@ class StateHandler {
     var views: [String: UIView] = [:]
     var currentView: UIView?
     
-    public func addView(_ view: UIView, forState state: String, superview: UIView) {
+    public func switchView(_ view: UIView, forState state: String, superview: UIView) {
         
         defer {
             currentView = view

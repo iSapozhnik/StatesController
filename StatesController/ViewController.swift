@@ -52,9 +52,19 @@ class ViewController: StatesViewController {
     
     @IBAction func showErrorWithretry(_ sender: Any) {
         userAction = {
-            print("Error with retry")
+            self.switchState(.loading)
+            self.doAfter(3) {
+                self.switchState(.none)
+            }
         }
         showError(sender)
+    }
+    
+    @IBAction func showLoadingInside(_ sender: Any) {
+        switchState(.loading, superview: sender as! UIButton)
+        doAfter(3) {
+            self.switchState(.none)
+        }
     }
     
     private func doAfter(_ interval: TimeInterval, completion: @escaping () -> Void) {

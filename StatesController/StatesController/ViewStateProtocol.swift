@@ -35,7 +35,13 @@ protocol ViewStateProtocol: class {
     
     var userAction: (() -> Void)? { get }
     
-    func switchState(_ state: StatesType)
+    func switchState(_ state: StatesType, superview: UIView?)
+}
+
+extension ViewStateProtocol {
+    func switchState(_ state: StatesType, superview: UIView? = nil) {
+        return switchState(state, superview: superview)
+    }
 }
 
 extension ViewStateProtocol where Self: UIViewController {
@@ -43,15 +49,15 @@ extension ViewStateProtocol where Self: UIViewController {
         return StateHandler.shared
     }
     
-    func switchState(_ state: StatesType) {
+    func switchState(_ state: StatesType, superview: UIView?) {
         
         switch state {
         case .loading:
-            stateHandler?.addView(loadingView!, forState: StatesType.loading.rawValue, superview: view)
+            stateHandler?.switchView(loadingView!, forState: StatesType.loading.rawValue, superview: superview ?? view)
         case .error:
-            stateHandler?.addView(errorView!, forState: StatesType.error.rawValue, superview: view)
+            stateHandler?.switchView(errorView!, forState: StatesType.error.rawValue, superview: superview ?? view)
         case .noData:
-            stateHandler?.addView(noDataView!, forState: StatesType.noData.rawValue, superview: view)
+            stateHandler?.switchView(noDataView!, forState: StatesType.noData.rawValue, superview: superview ?? view)
         default:
             stateHandler?.removeAllViews()
         }

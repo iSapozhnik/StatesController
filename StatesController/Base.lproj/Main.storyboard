@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hm9-51-uet">
-                                <rect key="frame" x="0.0" y="183.5" width="375" height="300"/>
+                                <rect key="frame" x="0.0" y="158.5" width="375" height="350"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MhC-Bb-Q8U">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
@@ -82,6 +82,16 @@
                                         <state key="normal" title="Show error with retry"/>
                                         <connections>
                                             <action selector="showErrorWithretry:" destination="BYZ-38-t0r" eventType="touchUpInside" id="scz-QS-3ES"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSY-mc-CWB">
+                                        <rect key="frame" x="0.0" y="300" width="375" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="UcU-vg-FIH"/>
+                                        </constraints>
+                                        <state key="normal" title="Show loading within thi button"/>
+                                        <connections>
+                                            <action selector="showLoadingInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VFI-VL-b4A"/>
                                         </connections>
                                     </button>
                                 </subviews>

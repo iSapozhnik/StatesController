@@ -15,28 +15,43 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="522-rB-Piv">
-                    <rect key="frame" x="155.5" y="283" width="64" height="101.5"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pak-sd-hgI">
+                    <rect key="frame" x="167.5" y="242" width="40" height="181.5"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="error" translatesAutoresizingMaskIntoConstraints="NO" id="pSD-A0-zKT">
-                            <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                            <rect key="frame" x="-12" y="0.0" width="64" height="64"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLA-PJ-1gI">
-                            <rect key="frame" x="0.0" y="64" width="64" height="20.5"/>
+                            <rect key="frame" x="0.0" y="104" width="40" height="20.5"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHj-I9-3OP">
-                            <rect key="frame" x="0.0" y="84.5" width="64" height="17"/>
+                            <rect key="frame" x="0.0" y="144.5" width="40" height="17"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                </stackView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="623-K7-dWw">
-                    <rect key="frame" x="155.5" y="416.5" width="63" height="30"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="pSD-A0-zKT" firstAttribute="centerX" secondItem="pak-sd-hgI" secondAttribute="centerX" id="4LV-rf-bYk"/>
+                        <constraint firstItem="cHj-I9-3OP" firstAttribute="top" secondItem="JLA-PJ-1gI" secondAttribute="bottom" constant="20" id="7Ed-Oh-qlM"/>
+                        <constraint firstAttribute="trailing" secondItem="cHj-I9-3OP" secondAttribute="trailing" id="CGG-0S-mkq"/>
+                        <constraint firstAttribute="trailing" secondItem="JLA-PJ-1gI" secondAttribute="trailing" id="JNf-h3-UVZ"/>
+                        <constraint firstItem="JLA-PJ-1gI" firstAttribute="top" secondItem="pSD-A0-zKT" secondAttribute="bottom" constant="40" id="MBw-RQ-grK"/>
+                        <constraint firstItem="cHj-I9-3OP" firstAttribute="centerX" secondItem="pak-sd-hgI" secondAttribute="centerX" id="OCb-CH-oUy"/>
+                        <constraint firstItem="JLA-PJ-1gI" firstAttribute="leading" secondItem="pak-sd-hgI" secondAttribute="leading" id="Sef-se-rkV"/>
+                        <constraint firstItem="cHj-I9-3OP" firstAttribute="leading" secondItem="pak-sd-hgI" secondAttribute="leading" id="WH4-Ry-hoq"/>
+                        <constraint firstItem="JLA-PJ-1gI" firstAttribute="centerX" secondItem="pak-sd-hgI" secondAttribute="centerX" id="bKA-EL-C8O"/>
+                        <constraint firstItem="pSD-A0-zKT" firstAttribute="top" secondItem="pak-sd-hgI" secondAttribute="top" id="bs1-Eh-mEn"/>
+                        <constraint firstAttribute="bottom" secondItem="cHj-I9-3OP" secondAttribute="bottom" constant="20" id="qxx-bY-s8o"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="623-K7-dWw">
+                    <rect key="frame" x="156" y="434.5" width="63" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Try again"/>
                     <connections>
                         <action selector="retryTap" destination="iN0-l3-epB" eventType="touchUpInside" id="EK7-Ym-YZc"/>
@@ -45,12 +60,10 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="522-rB-Piv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="Kxx-ng-LrG"/>
-                <constraint firstItem="522-rB-Piv" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="SbQ-pk-ihC"/>
-                <constraint firstItem="623-K7-dWw" firstAttribute="top" secondItem="522-rB-Piv" secondAttribute="bottom" constant="32" id="eWS-sV-XZk"/>
-                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="522-rB-Piv" secondAttribute="trailing" constant="16" id="erd-0a-kUi"/>
-                <constraint firstItem="522-rB-Piv" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="oFa-IV-gYu"/>
-                <constraint firstItem="623-K7-dWw" firstAttribute="centerX" secondItem="522-rB-Piv" secondAttribute="centerX" id="rtc-EV-ZrK"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="pak-sd-hgI" secondAttribute="trailing" constant="16" id="3uG-yT-bVy"/>
+                <constraint firstItem="pak-sd-hgI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="7KX-6m-Y17"/>
+                <constraint firstItem="pak-sd-hgI" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="PL0-TV-ffk"/>
+                <constraint firstItem="pak-sd-hgI" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="UfE-Ha-vp4"/>
             </constraints>
             <connections>
                 <outlet property="errorIcon" destination="pSD-A0-zKT" id="GLH-JX-0AU"/>

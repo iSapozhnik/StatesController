@@ -127,9 +127,9 @@
 		FF1CC0442014F7B600CDE990 /* StatesController */ = {
 			isa = PBXGroup;
 			children = (
+				FF1CC04E2014F7B600CDE990 /* ViewStateProtocol.swift */,
 				FF1CC0452014F7B600CDE990 /* StateHandler.swift */,
 				FF1CC0462014F7B600CDE990 /* Views */,
-				FF1CC04E2014F7B600CDE990 /* ViewStateProtocol.swift */,
 			);
 			path = StatesController;
 			sourceTree = "<group>";
