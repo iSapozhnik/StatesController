@@ -7,4 +7,4 @@ UIViewController which implements switching states: Loading, No Data, Error and 
 
 | Error state with retry | No data state |
 | --- | --- |
-| ![](Assets/3.png) | ![](Assets/4.png) |
+| ![](Assets/4.png) | ![](Assets/3.png) |
