@@ -1,10 +1,10 @@
 # StateController
 UIViewController which implements switching states: Loading, No Data, Error and Content
 
-| Demo overview | Loading state |
+| Loading state | Error state |
 | --- | --- |
-| ![](Assets/0.png "Demo overview") | ![](Assets/1.png "Loading state") |
+| ![](Assets/1.png) | ![](Assets/2.png) |
 
-| Error state | No data state |
+| Error state with retry | No data state |
 | --- | --- |
-| ![](Assets/2.png) | ![](Assets/3.png) |
+| ![](Assets/3.png) | ![](Assets/4.png) |
