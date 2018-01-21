@@ -34,12 +34,12 @@ protocol ViewStateProtocol: class {
     var errorConfig: StateConfig? { get }
     var noDataConfig: StateConfig? { get }
     
-    func switchState(_ state: StatesType, superview: UIView?)
+    func switchState(_ state: StatesType, superview: UIView?, animated: Bool)
 }
 
 extension ViewStateProtocol {
-    func switchState(_ state: StatesType, superview: UIView? = nil) {
-        return switchState(state, superview: superview)
+    func switchState(_ state: StatesType, superview: UIView? = nil, animated: Bool = true) {
+        return switchState(state, superview: superview, animated: animated)
     }
 }
 
@@ -48,17 +48,17 @@ extension ViewStateProtocol where Self: UIViewController {
         return StateHandler.shared
     }
     
-    func switchState(_ state: StatesType, superview: UIView?) {
+    func switchState(_ state: StatesType, superview: UIView?, animated: Bool) {
         
         switch state {
         case .loading:
-            stateHandler?.switchView(loadingView!, forState: StatesType.loading.rawValue, superview: superview ?? view)
+            stateHandler?.switchView(loadingView!, forState: StatesType.loading.rawValue, superview: superview ?? view, animated: animated)
         case .error:
-            stateHandler?.switchView(errorView!, forState: StatesType.error.rawValue, superview: superview ?? view)
+            stateHandler?.switchView(errorView!, forState: StatesType.error.rawValue, superview: superview ?? view, animated: animated)
         case .noData:
-            stateHandler?.switchView(noDataView!, forState: StatesType.noData.rawValue, superview: superview ?? view)
+            stateHandler?.switchView(noDataView!, forState: StatesType.noData.rawValue, superview: superview ?? view, animated: animated)
         default:
-            stateHandler?.removeAllViews()
+            stateHandler?.removeAllViews(animated: true)
         }
     }
 }

@@ -10,7 +10,16 @@ import UIKit
 
 class ViewController: StatesViewController {
     
-    @IBAction func showLoading(_ sender: Any) {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        switchState(.loading, animated: false)
+        doAfter(3) {
+            self.switchState(.none)
+        }
+    }
+    
+    @IBAction func showLoading(_ sender: Any?) {
         switchState(.loading)
         doAfter(3) { 
             self.switchState(.none)
