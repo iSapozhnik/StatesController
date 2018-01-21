@@ -17,10 +17,10 @@
             <subviews>
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="1mK-Am-Td4">
                     <rect key="frame" x="169" y="315" width="37" height="37"/>
-                    <color key="color" red="0.34056776760000002" green="0.80801087620000001" blue="0.5257632136" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="color" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                 </activityIndicatorView>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
             <constraints>
                 <constraint firstItem="1mK-Am-Td4" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="jg1-Yl-L9Y"/>
                 <constraint firstItem="1mK-Am-Td4" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="mJE-Ed-Sex"/>
