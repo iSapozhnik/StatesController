@@ -13,13 +13,12 @@ class StatesViewController: UIViewController, ViewStateProtocol {
         var title: String?
         var message: String?
         var image: UIImage?
+        var userAction: (() -> Void)?
     }
     
     var errorConfig: StateConfig?
     var loadingConfig: StateConfig?
     var noDataConfig: StateConfig?
-    
-    var userAction: (() -> Void)?
     
     var loadingView: UIView? {
         let view = LoadingStateView.loadFromNib()
@@ -29,7 +28,6 @@ class StatesViewController: UIViewController, ViewStateProtocol {
     
     var errorView: UIView? {
         let view = ErrorStateView.loadFromNib()
-        view?.userAction = userAction
         view?.configure(with: errorConfig)
         return view
     }

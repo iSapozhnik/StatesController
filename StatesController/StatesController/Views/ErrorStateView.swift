@@ -21,10 +21,10 @@ class ErrorStateView: BaseStateView {
         titleLabel.text = config?.title
         messageLabel.text = config?.message
         
-        retryButton.isHidden = userAction == nil
+        retryButton.isHidden = config?.userAction == nil
     }
     
     @IBAction func retryTap() {
-        userAction?()
+        config?.userAction?()
     }
 }

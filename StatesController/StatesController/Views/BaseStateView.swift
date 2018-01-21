@@ -11,7 +11,6 @@ import UIKit
 class BaseStateView: UIView {
 
     var config: StateConfig?
-    var userAction: (() -> Void)?
     
     override init(frame: CGRect) {
         super.init(frame: frame)

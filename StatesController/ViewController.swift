@@ -18,7 +18,7 @@ class ViewController: StatesViewController {
     }
     
     @IBAction func showError(_ sender: Any) {
-        let errorConfig = Config(title: "Oops something went wrong.", message: "We are really sorry, but something went wrong. We are working to fix this poblem.", image: #imageLiteral(resourceName: "error"))
+        let errorConfig = Config(title: "Oops something went wrong.", message: "We are really sorry, but something went wrong. We are working to fix this poblem.", image: #imageLiteral(resourceName: "error"), userAction: nil)
         self.errorConfig = errorConfig
         self.switchState(.error)
         doAfter(3) {
@@ -27,7 +27,7 @@ class ViewController: StatesViewController {
     }
     
     @IBAction func showNoData(_ sender: Any) {
-        let noDataConfig = Config(title: "No search results.", message: "We are sorry, but we couldn't fine any reaults matching your search criteria.", image: #imageLiteral(resourceName: "noData"))
+        let noDataConfig = Config(title: "No search results.", message: "We are sorry, but we couldn't fine any reaults matching your search criteria.", image: #imageLiteral(resourceName: "noData"), userAction: nil)
         
         self.noDataConfig = noDataConfig
         self.switchState(.noData)
@@ -51,13 +51,14 @@ class ViewController: StatesViewController {
     }
     
     @IBAction func showErrorWithretry(_ sender: Any) {
-        userAction = {
+        let errorConfig = Config(title: "Oops something went wrong.", message: "We are really sorry, but something went wrong. We are working to fix this poblem.", image: #imageLiteral(resourceName: "error"), userAction: {
             self.switchState(.loading)
             self.doAfter(3) {
                 self.switchState(.none)
             }
-        }
-        showError(sender)
+        })
+        self.errorConfig = errorConfig
+        self.switchState(.error)
     }
     
     @IBAction func showLoadingInside(_ sender: Any) {

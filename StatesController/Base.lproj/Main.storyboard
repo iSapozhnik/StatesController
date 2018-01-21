@@ -89,7 +89,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="UcU-vg-FIH"/>
                                         </constraints>
-                                        <state key="normal" title="Show loading within thi button"/>
+                                        <state key="normal" title="Show loading within this button"/>
                                         <connections>
                                             <action selector="showLoadingInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VFI-VL-b4A"/>
                                         </connections>

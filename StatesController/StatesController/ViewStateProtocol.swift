@@ -20,6 +20,7 @@ protocol StateConfig {
     var title: String? { get }
     var message: String? { get }
     var image: UIImage? { get }
+    var userAction: (() -> Void)? { get }
 }
 
 protocol ViewStateProtocol: class {
@@ -32,8 +33,6 @@ protocol ViewStateProtocol: class {
     var loadingConfig: StateConfig? { get }
     var errorConfig: StateConfig? { get }
     var noDataConfig: StateConfig? { get }
-    
-    var userAction: (() -> Void)? { get }
     
     func switchState(_ state: StatesType, superview: UIView?)
 }
