@@ -13,18 +13,18 @@
 		FF1CC00D20129D9700CDE990 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF1CC00C20129D9700CDE990 /* Assets.xcassets */; };
 		FF1CC01020129D9700CDE990 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF1CC00E20129D9700CDE990 /* LaunchScreen.storyboard */; };
 		FF1CC01B20129D9700CDE990 /* StatesControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1CC01A20129D9700CDE990 /* StatesControllerTests.swift */; };
-		FF1CC02620129DC100CDE990 /* ViewStateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1CC02520129DC100CDE990 /* ViewStateProtocol.swift */; };
-		FF1CC02820129F4D00CDE990 /* StateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1CC02720129F4D00CDE990 /* StateHandler.swift */; };
 		FF1CC0302014C65D00CDE990 /* UIView+Xib.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1CC02F2014C65D00CDE990 /* UIView+Xib.swift */; };
-		FF1CC0352014C72C00CDE990 /* BaseStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1CC0322014C72C00CDE990 /* BaseStateView.swift */; };
-		FF1CC0362014C72C00CDE990 /* ErrorStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1CC0332014C72C00CDE990 /* ErrorStateView.swift */; };
-		FF1CC0372014C72C00CDE990 /* LoadingStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1CC0342014C72C00CDE990 /* LoadingStateView.swift */; };
-		FF1CC0392014C75600CDE990 /* LoadingStateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF1CC0382014C75600CDE990 /* LoadingStateView.xib */; };
 		FF1CC03B2014C9F800CDE990 /* StatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1CC03A2014C9F800CDE990 /* StatesViewController.swift */; };
-		FF1CC03D2014CE7B00CDE990 /* ErrorStateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF1CC03C2014CE7B00CDE990 /* ErrorStateView.xib */; };
-		FF1CC03F2014D5D500CDE990 /* NoDataStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1CC03E2014D5D500CDE990 /* NoDataStateView.swift */; };
-		FF1CC0412014D5DE00CDE990 /* NoDataStateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF1CC0402014D5DE00CDE990 /* NoDataStateView.xib */; };
 		FF1CC0432014E1EF00CDE990 /* UIView+Embed.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1CC0422014E1EF00CDE990 /* UIView+Embed.swift */; };
+		FF1CC04F2014F7B600CDE990 /* StateHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1CC0452014F7B600CDE990 /* StateHandler.swift */; };
+		FF1CC0502014F7B600CDE990 /* BaseStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1CC0472014F7B600CDE990 /* BaseStateView.swift */; };
+		FF1CC0512014F7B600CDE990 /* ErrorStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1CC0482014F7B600CDE990 /* ErrorStateView.swift */; };
+		FF1CC0522014F7B600CDE990 /* ErrorStateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF1CC0492014F7B600CDE990 /* ErrorStateView.xib */; };
+		FF1CC0532014F7B600CDE990 /* LoadingStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1CC04A2014F7B600CDE990 /* LoadingStateView.swift */; };
+		FF1CC0542014F7B600CDE990 /* LoadingStateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF1CC04B2014F7B600CDE990 /* LoadingStateView.xib */; };
+		FF1CC0552014F7B600CDE990 /* NoDataStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1CC04C2014F7B600CDE990 /* NoDataStateView.swift */; };
+		FF1CC0562014F7B600CDE990 /* NoDataStateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF1CC04D2014F7B600CDE990 /* NoDataStateView.xib */; };
+		FF1CC0572014F7B600CDE990 /* ViewStateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1CC04E2014F7B600CDE990 /* ViewStateProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,18 +48,18 @@
 		FF1CC01620129D9700CDE990 /* StatesControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StatesControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF1CC01A20129D9700CDE990 /* StatesControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatesControllerTests.swift; sourceTree = "<group>"; };
 		FF1CC01C20129D9700CDE990 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FF1CC02520129DC100CDE990 /* ViewStateProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewStateProtocol.swift; sourceTree = "<group>"; };
-		FF1CC02720129F4D00CDE990 /* StateHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateHandler.swift; sourceTree = "<group>"; };
 		FF1CC02F2014C65D00CDE990 /* UIView+Xib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Xib.swift"; sourceTree = "<group>"; };
-		FF1CC0322014C72C00CDE990 /* BaseStateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseStateView.swift; sourceTree = "<group>"; };
-		FF1CC0332014C72C00CDE990 /* ErrorStateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorStateView.swift; sourceTree = "<group>"; };
-		FF1CC0342014C72C00CDE990 /* LoadingStateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingStateView.swift; sourceTree = "<group>"; };
-		FF1CC0382014C75600CDE990 /* LoadingStateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingStateView.xib; sourceTree = "<group>"; };
 		FF1CC03A2014C9F800CDE990 /* StatesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatesViewController.swift; sourceTree = "<group>"; };
-		FF1CC03C2014CE7B00CDE990 /* ErrorStateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ErrorStateView.xib; sourceTree = "<group>"; };
-		FF1CC03E2014D5D500CDE990 /* NoDataStateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoDataStateView.swift; sourceTree = "<group>"; };
-		FF1CC0402014D5DE00CDE990 /* NoDataStateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoDataStateView.xib; sourceTree = "<group>"; };
 		FF1CC0422014E1EF00CDE990 /* UIView+Embed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Embed.swift"; sourceTree = "<group>"; };
+		FF1CC0452014F7B600CDE990 /* StateHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateHandler.swift; sourceTree = "<group>"; };
+		FF1CC0472014F7B600CDE990 /* BaseStateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseStateView.swift; sourceTree = "<group>"; };
+		FF1CC0482014F7B600CDE990 /* ErrorStateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorStateView.swift; sourceTree = "<group>"; };
+		FF1CC0492014F7B600CDE990 /* ErrorStateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ErrorStateView.xib; sourceTree = "<group>"; };
+		FF1CC04A2014F7B600CDE990 /* LoadingStateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingStateView.swift; sourceTree = "<group>"; };
+		FF1CC04B2014F7B600CDE990 /* LoadingStateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingStateView.xib; sourceTree = "<group>"; };
+		FF1CC04C2014F7B600CDE990 /* NoDataStateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoDataStateView.swift; sourceTree = "<group>"; };
+		FF1CC04D2014F7B600CDE990 /* NoDataStateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoDataStateView.xib; sourceTree = "<group>"; };
+		FF1CC04E2014F7B600CDE990 /* ViewStateProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewStateProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,15 +102,13 @@
 			isa = PBXGroup;
 			children = (
 				FF1CC00520129D9700CDE990 /* AppDelegate.swift */,
-				FF1CC03A2014C9F800CDE990 /* StatesViewController.swift */,
 				FF1CC00720129D9700CDE990 /* ViewController.swift */,
+				FF1CC03A2014C9F800CDE990 /* StatesViewController.swift */,
+				FF1CC0442014F7B600CDE990 /* StatesController */,
 				FF1CC00920129D9700CDE990 /* Main.storyboard */,
 				FF1CC00C20129D9700CDE990 /* Assets.xcassets */,
 				FF1CC00E20129D9700CDE990 /* LaunchScreen.storyboard */,
 				FF1CC01120129D9700CDE990 /* Info.plist */,
-				FF1CC02520129DC100CDE990 /* ViewStateProtocol.swift */,
-				FF1CC0312014C72C00CDE990 /* Views */,
-				FF1CC02720129F4D00CDE990 /* StateHandler.swift */,
 				FF1CC02F2014C65D00CDE990 /* UIView+Xib.swift */,
 				FF1CC0422014E1EF00CDE990 /* UIView+Embed.swift */,
 			);
@@ -126,16 +124,26 @@
 			path = StatesControllerTests;
 			sourceTree = "<group>";
 		};
-		FF1CC0312014C72C00CDE990 /* Views */ = {
+		FF1CC0442014F7B600CDE990 /* StatesController */ = {
 			isa = PBXGroup;
 			children = (
-				FF1CC0322014C72C00CDE990 /* BaseStateView.swift */,
-				FF1CC0332014C72C00CDE990 /* ErrorStateView.swift */,
-				FF1CC03C2014CE7B00CDE990 /* ErrorStateView.xib */,
-				FF1CC0342014C72C00CDE990 /* LoadingStateView.swift */,
-				FF1CC0382014C75600CDE990 /* LoadingStateView.xib */,
-				FF1CC03E2014D5D500CDE990 /* NoDataStateView.swift */,
-				FF1CC0402014D5DE00CDE990 /* NoDataStateView.xib */,
+				FF1CC0452014F7B600CDE990 /* StateHandler.swift */,
+				FF1CC0462014F7B600CDE990 /* Views */,
+				FF1CC04E2014F7B600CDE990 /* ViewStateProtocol.swift */,
+			);
+			path = StatesController;
+			sourceTree = "<group>";
+		};
+		FF1CC0462014F7B600CDE990 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FF1CC0472014F7B600CDE990 /* BaseStateView.swift */,
+				FF1CC0482014F7B600CDE990 /* ErrorStateView.swift */,
+				FF1CC0492014F7B600CDE990 /* ErrorStateView.xib */,
+				FF1CC04A2014F7B600CDE990 /* LoadingStateView.swift */,
+				FF1CC04B2014F7B600CDE990 /* LoadingStateView.xib */,
+				FF1CC04C2014F7B600CDE990 /* NoDataStateView.swift */,
+				FF1CC04D2014F7B600CDE990 /* NoDataStateView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -224,11 +232,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FF1CC01020129D9700CDE990 /* LaunchScreen.storyboard in Resources */,
-				FF1CC0412014D5DE00CDE990 /* NoDataStateView.xib in Resources */,
+				FF1CC0562014F7B600CDE990 /* NoDataStateView.xib in Resources */,
+				FF1CC0542014F7B600CDE990 /* LoadingStateView.xib in Resources */,
+				FF1CC0522014F7B600CDE990 /* ErrorStateView.xib in Resources */,
 				FF1CC00D20129D9700CDE990 /* Assets.xcassets in Resources */,
 				FF1CC00B20129D9700CDE990 /* Main.storyboard in Resources */,
-				FF1CC03D2014CE7B00CDE990 /* ErrorStateView.xib in Resources */,
-				FF1CC0392014C75600CDE990 /* LoadingStateView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,16 +254,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF1CC02820129F4D00CDE990 /* StateHandler.swift in Sources */,
+				FF1CC0532014F7B600CDE990 /* LoadingStateView.swift in Sources */,
 				FF1CC03B2014C9F800CDE990 /* StatesViewController.swift in Sources */,
-				FF1CC0352014C72C00CDE990 /* BaseStateView.swift in Sources */,
 				FF1CC0302014C65D00CDE990 /* UIView+Xib.swift in Sources */,
-				FF1CC0372014C72C00CDE990 /* LoadingStateView.swift in Sources */,
-				FF1CC02620129DC100CDE990 /* ViewStateProtocol.swift in Sources */,
+				FF1CC0502014F7B600CDE990 /* BaseStateView.swift in Sources */,
 				FF1CC00820129D9700CDE990 /* ViewController.swift in Sources */,
-				FF1CC03F2014D5D500CDE990 /* NoDataStateView.swift in Sources */,
 				FF1CC00620129D9700CDE990 /* AppDelegate.swift in Sources */,
-				FF1CC0362014C72C00CDE990 /* ErrorStateView.swift in Sources */,
+				FF1CC0512014F7B600CDE990 /* ErrorStateView.swift in Sources */,
+				FF1CC0572014F7B600CDE990 /* ViewStateProtocol.swift in Sources */,
+				FF1CC0552014F7B600CDE990 /* NoDataStateView.swift in Sources */,
+				FF1CC04F2014F7B600CDE990 /* StateHandler.swift in Sources */,
 				FF1CC0432014E1EF00CDE990 /* UIView+Embed.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -464,6 +472,7 @@
 				FF1CC02120129D9700CDE990 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FF1CC02220129D9700CDE990 /* Build configuration list for PBXNativeTarget "StatesControllerTests" */ = {
 			isa = XCConfigurationList;
@@ -472,6 +481,7 @@
 				FF1CC02420129D9700CDE990 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

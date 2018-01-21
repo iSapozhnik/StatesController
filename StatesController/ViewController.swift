@@ -9,27 +9,6 @@
 import UIKit
 
 class ViewController: StatesViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-//        switchState(.loading)
-//        
-//        var interval = 3.0
-//        doAfter(interval) {
-//            let errorConfig = Config(title: "Oops something went wrong.", message: "We are really sorry, but something went wrong. We are working to fix this poblem.", image: nil)
-//            self.errorConfig = errorConfig
-//            self.switchState(.error)
-//        }
-//
-//        interval += 3.0
-//        doAfter(interval) { 
-//            let noDataConfig = Config(title: "No search results.", message: "We are sorry, but we couldn't fine any reaults matching your search criteria.", image: nil)
-//            self.noDataConfig = noDataConfig
-//            self.switchState(.noData)
-//        }
-        
-    }
     
     @IBAction func showLoading(_ sender: Any) {
         switchState(.loading)
