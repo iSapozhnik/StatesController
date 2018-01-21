@@ -28,7 +28,6 @@ class ViewController: StatesViewController {
     
     @IBAction func showNoData(_ sender: Any) {
         let noDataConfig = Config(title: "No search results.", message: "We are sorry, but we couldn't fine any reaults matching your search criteria.", image: #imageLiteral(resourceName: "noData"), userAction: nil)
-        
         self.noDataConfig = noDataConfig
         self.switchState(.noData)
         doAfter(3) {
