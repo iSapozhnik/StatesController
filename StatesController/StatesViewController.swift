@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+/*
 class StatesViewController: UIViewController, ViewStateProtocol {
     struct Config: StateConfig {
         var title: String?
@@ -38,3 +38,4 @@ class StatesViewController: UIViewController, ViewStateProtocol {
         return view
     }
 }
+ */

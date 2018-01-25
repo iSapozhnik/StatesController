@@ -15,10 +15,18 @@ class StateHandler {
     var views: [String: UIView] = [:]
     var currentView: UIView?
     
-    public func switchView(_ view: UIView, forState state: String, superview: UIView, animated: Bool) {
+    public func view(forState state: StatesType) -> UIView? {
+        return views[state.rawValue]
+    }
+    
+    public func switchView(_ view: UIView?, forState state: String, superview: UIView, animated: Bool) {
         
         defer {
             currentView = view
+        }
+        
+        guard let view = view else {
+            fatalError("Error! View is nil")
         }
         
         views[state] = view
@@ -32,8 +40,10 @@ class StateHandler {
             return
         }
         
+        view.alpha = 1.0
+        superview.embedSubview(view)
+
         UIView.transition(from: currentView, to: view, duration: animated ? 0.3 : 0.0, options: .transitionCrossDissolve) { flag in
-            superview.embedSubview(view)
         }
     }
     

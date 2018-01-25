@@ -16,6 +16,13 @@ enum StatesType: String {
     case none = "none"
 }
 
+struct Config: StateConfig {
+    var title: String?
+    var message: String?
+    var image: UIImage?
+    var userAction: (() -> Void)?
+}
+
 protocol StateConfig {
     var title: String? { get }
     var message: String? { get }
@@ -23,23 +30,25 @@ protocol StateConfig {
     var userAction: (() -> Void)? { get }
 }
 
+protocol ViewStatePlaceholder {
+    func configure(with config: StateConfig?)
+}
+
+extension ViewStatePlaceholder where Self: UIView {}
+
 protocol ViewStateProtocol: class {
     var stateHandler: StateHandler? { get }
     
-    var loadingView: UIView? { get }
-    var errorView: UIView? { get }
-    var noDataView: UIView? { get }
+    var loadingView: ViewStatePlaceholder? { get set }
+    var errorView: ViewStatePlaceholder? { get set }
+    var noDataView: ViewStatePlaceholder? { get set }
     
-    var loadingConfig: StateConfig? { get }
-    var errorConfig: StateConfig? { get }
-    var noDataConfig: StateConfig? { get }
-    
-    func switchState(_ state: StatesType, superview: UIView?, animated: Bool)
+    func switchState(_ state: StatesType, config: Config?, superview: UIView?, animated: Bool)
 }
 
 extension ViewStateProtocol {
-    func switchState(_ state: StatesType, superview: UIView? = nil, animated: Bool = true) {
-        return switchState(state, superview: superview, animated: animated)
+    func switchState(_ state: StatesType, config: Config? = nil, superview: UIView? = nil, animated: Bool = true) {
+        return switchState(state, config: config, superview: superview, animated: animated)
     }
 }
 
@@ -48,15 +57,18 @@ extension ViewStateProtocol where Self: UIViewController {
         return StateHandler.shared
     }
     
-    func switchState(_ state: StatesType, superview: UIView?, animated: Bool) {
+    func switchState(_ state: StatesType, config: Config?, superview: UIView?, animated: Bool) {
         
         switch state {
         case .loading:
-            stateHandler?.switchView(loadingView!, forState: StatesType.loading.rawValue, superview: superview ?? view, animated: animated)
+            loadingView?.configure(with: config)
+            stateHandler?.switchView(loadingView as? UIView, forState: StatesType.loading.rawValue, superview: superview ?? view, animated: animated)
         case .error:
-            stateHandler?.switchView(errorView!, forState: StatesType.error.rawValue, superview: superview ?? view, animated: animated)
+            errorView?.configure(with: config)
+            stateHandler?.switchView(errorView as? UIView, forState: StatesType.error.rawValue, superview: superview ?? view, animated: animated)
         case .noData:
-            stateHandler?.switchView(noDataView!, forState: StatesType.noData.rawValue, superview: superview ?? view, animated: animated)
+            noDataView?.configure(with: config)
+            stateHandler?.switchView(noDataView as? UIView, forState: StatesType.noData.rawValue, superview: superview ?? view, animated: animated)
         default:
             stateHandler?.removeAllViews(animated: true)
         }

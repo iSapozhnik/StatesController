@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BaseStateView: UIView {
+class BaseStateView: UIView, ViewStatePlaceholder {
 
     var config: StateConfig?
     

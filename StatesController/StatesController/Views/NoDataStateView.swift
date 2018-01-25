@@ -14,6 +14,12 @@ class NoDataStateView: BaseStateView {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!
     
+    override var alpha: CGFloat {
+        didSet {
+            
+        }
+    }
+    
     override func setupView() {
         super.setupView()
         

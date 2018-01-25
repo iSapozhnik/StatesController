@@ -8,7 +8,15 @@
 
 import UIKit
 
-class ViewController: StatesViewController {
+class ViewController: UIViewController, ViewStateProtocol {
+    
+    var loadingView: ViewStatePlaceholder? = LoadingStateView.loadFromNib()
+    var errorView: ViewStatePlaceholder? = ErrorStateView.loadFromNib()
+    var noDataView: ViewStatePlaceholder? = NoDataStateView.loadFromNib()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -28,8 +36,7 @@ class ViewController: StatesViewController {
     
     @IBAction func showError(_ sender: Any) {
         let errorConfig = Config(title: "Oops something went wrong.", message: "We are really sorry, but something went wrong. We are working to fix this poblem.", image: #imageLiteral(resourceName: "error"), userAction: nil)
-        self.errorConfig = errorConfig
-        self.switchState(.error)
+        self.switchState(.error, config: errorConfig)
         doAfter(3) {
             self.switchState(.none)
         }
@@ -37,8 +44,7 @@ class ViewController: StatesViewController {
     
     @IBAction func showNoData(_ sender: Any) {
         let noDataConfig = Config(title: "No search results.", message: "We are sorry, but we couldn't fine any reaults matching your search criteria.", image: #imageLiteral(resourceName: "noData"), userAction: nil)
-        self.noDataConfig = noDataConfig
-        self.switchState(.noData)
+        self.switchState(.noData, config: noDataConfig)
         doAfter(3) {
             self.switchState(.none)
         }
@@ -65,8 +71,7 @@ class ViewController: StatesViewController {
                 self.switchState(.none)
             }
         })
-        self.errorConfig = errorConfig
-        self.switchState(.error)
+        self.switchState(.error, config: errorConfig)
     }
     
     @IBAction func showLoadingInside(_ sender: Any) {
