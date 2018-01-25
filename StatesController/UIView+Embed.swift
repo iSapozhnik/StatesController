@@ -11,8 +11,9 @@ import  UIKit
 
 extension UIView {
     func embedSubview(_ view: UIView) {
-        addSubview(view)
         view.translatesAutoresizingMaskIntoConstraints = false
+
+        addSubview(view)
         NSLayoutConstraint.activate([
             self.topAnchor.constraint(equalTo: view.topAnchor),
             self.leftAnchor.constraint(equalTo: view.leftAnchor),

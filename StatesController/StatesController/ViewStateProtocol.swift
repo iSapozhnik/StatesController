@@ -16,18 +16,11 @@ enum StatesType: String {
     case none = "none"
 }
 
-struct Config: StateConfig {
+struct StateConfig {
     var title: String?
     var message: String?
     var image: UIImage?
     var userAction: (() -> Void)?
-}
-
-protocol StateConfig {
-    var title: String? { get }
-    var message: String? { get }
-    var image: UIImage? { get }
-    var userAction: (() -> Void)? { get }
 }
 
 protocol ViewStatePlaceholder {
@@ -43,11 +36,11 @@ protocol ViewStateProtocol: class {
     var errorView: ViewStatePlaceholder? { get set }
     var noDataView: ViewStatePlaceholder? { get set }
     
-    func switchState(_ state: StatesType, config: Config?, superview: UIView?, animated: Bool)
+    func switchState(_ state: StatesType, config: StateConfig?, superview: UIView?, animated: Bool)
 }
 
 extension ViewStateProtocol {
-    func switchState(_ state: StatesType, config: Config? = nil, superview: UIView? = nil, animated: Bool = true) {
+    func switchState(_ state: StatesType, config: StateConfig? = nil, superview: UIView? = nil, animated: Bool = true) {
         return switchState(state, config: config, superview: superview, animated: animated)
     }
 }
@@ -57,7 +50,7 @@ extension ViewStateProtocol where Self: UIViewController {
         return StateHandler.shared
     }
     
-    func switchState(_ state: StatesType, config: Config?, superview: UIView?, animated: Bool) {
+    func switchState(_ state: StatesType, config: StateConfig?, superview: UIView?, animated: Bool) {
         
         switch state {
         case .loading:

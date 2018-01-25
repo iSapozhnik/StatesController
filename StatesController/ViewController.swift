@@ -35,7 +35,7 @@ class ViewController: UIViewController, ViewStateProtocol {
     }
     
     @IBAction func showError(_ sender: Any) {
-        let errorConfig = Config(title: "Oops something went wrong.", message: "We are really sorry, but something went wrong. We are working to fix this poblem.", image: #imageLiteral(resourceName: "error"), userAction: nil)
+        let errorConfig = StateConfig(title: "Oops something went wrong.", message: "We are really sorry, but something went wrong. We are working to fix this poblem.", image: #imageLiteral(resourceName: "error"), userAction: nil)
         self.switchState(.error, config: errorConfig)
         doAfter(3) {
             self.switchState(.none)
@@ -43,7 +43,7 @@ class ViewController: UIViewController, ViewStateProtocol {
     }
     
     @IBAction func showNoData(_ sender: Any) {
-        let noDataConfig = Config(title: "No search results.", message: "We are sorry, but we couldn't fine any reaults matching your search criteria.", image: #imageLiteral(resourceName: "noData"), userAction: nil)
+        let noDataConfig = StateConfig(title: "No search results.", message: "We are sorry, but we couldn't fine any reaults matching your search criteria.", image: #imageLiteral(resourceName: "noData"), userAction: nil)
         self.switchState(.noData, config: noDataConfig)
         doAfter(3) {
             self.switchState(.none)
@@ -65,7 +65,7 @@ class ViewController: UIViewController, ViewStateProtocol {
     }
     
     @IBAction func showErrorWithretry(_ sender: Any) {
-        let errorConfig = Config(title: "Oops something went wrong.", message: "We are really sorry, but something went wrong. We are working to fix this poblem.", image: #imageLiteral(resourceName: "error"), userAction: {
+        let errorConfig = StateConfig(title: "Oops something went wrong.", message: "We are really sorry, but something went wrong. We are working to fix this poblem.", image: #imageLiteral(resourceName: "error"), userAction: {
             self.switchState(.loading)
             self.doAfter(3) {
                 self.switchState(.none)
