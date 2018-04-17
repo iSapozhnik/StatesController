@@ -42,7 +42,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func showNoData(_ sender: Any) {
-        errorView?.setupView(icon: #imageLiteral(resourceName: "error"), title: "Oops something went wrong.", message: "We are really sorry, but something went wrong. We are working to fix this poblem.")
+        noDataView?.setupView(icon: #imageLiteral(resourceName: "error"), title: "Oops something went wrong.", message: "We are really sorry, but something went wrong. We are working to fix this poblem.")
         mainStateHandler.switchView(to: .noData)
         doAfter(3) {
             self.mainStateHandler.switchView(to: .none)
