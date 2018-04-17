@@ -8,23 +8,22 @@
 
 import UIKit
 
-class ErrorStateView: BaseStateView {
-    @IBOutlet weak var errorIcon: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var messageLabel: UILabel!
-    @IBOutlet weak var retryButton: UIButton!
+class ErrorStateView: UIView {
+    @IBOutlet var errorIcon: UIImageView!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var messageLabel: UILabel!
+    @IBOutlet var retryButton: UIButton!
+
+    fileprivate var retry: (() -> ())?
     
-    override func setupView() {
-        super.setupView()
-        
-        errorIcon.image = config?.image
-        titleLabel.text = config?.title
-        messageLabel.text = config?.message
-        
-        retryButton.isHidden = config?.userAction == nil
+    func setupView(icon: UIImage, title: String, message: String, retry: @escaping () -> () = {}) {
+        errorIcon.image = icon
+        titleLabel.text = title
+        messageLabel.text = message
+        self.retry = retry
     }
     
     @IBAction func retryTap() {
-        config?.userAction?()
+        retry?()
     }
 }

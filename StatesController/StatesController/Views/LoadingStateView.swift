@@ -8,9 +8,5 @@
 
 import UIKit
 
-class LoadingStateView: BaseStateView {
-    override func setupView() {
-        super.setupView()
-
-    }
+class LoadingStateView: UIView {
 }
