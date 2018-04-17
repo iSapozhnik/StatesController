@@ -9,53 +9,63 @@
 import Foundation
 import UIKit
 
-class StateHandler {
-    
-    static let shared = StateHandler()
-    var views: [String: UIView] = [:]
-    var currentView: UIView?
-    
-    public func view(forState state: StatesType) -> UIView? {
-        return views[state.rawValue]
+class StateHandler<State: Hashable> {
+
+    private weak var currentView: UIView?
+    private weak var view: UIView?
+    private var registeredStates: [State: UIView?] = [:]
+    private var state: State?
+
+    init(_ view: UIView, states: (state: State, view: UIView?)...) {
+        self.view = view
+        for item in states {
+            item.view?.alpha = 0
+            registeredStates[item.state] = item.view
+        }
     }
-    
-    public func switchView(_ view: UIView?, forState state: String, superview: UIView, animated: Bool) {
+
+    deinit {
+        removeCurrentView(animated: false)
+    }
+
+    public func switchView(to state: State, animated: Bool = true) {
+        guard self.state != state else { return }
+        guard let nv = registeredStates[state] else { return }
+        guard let newView = nv else {
+            self.state = state
+            return removeCurrentView(animated: animated)
+        }
         
         defer {
-            currentView = view
+            self.currentView = newView
+            self.state = state
         }
-        
-        guard let view = view else {
-            fatalError("Error! View is nil")
-        }
-        
-        views[state] = view
-        
-        guard let currentView = self.currentView else {
-            view.alpha = 0.0
-            superview.embedSubview(view)
-            UIView.animate(withDuration: animated ? 0.3 : 0.0, animations: {
-                view.alpha = 1.0
-            })
-            return
-        }
-        
-        view.alpha = 1.0
-        superview.embedSubview(view)
 
-        UIView.transition(from: currentView, to: view, duration: animated ? 0.3 : 0.0, options: .transitionCrossDissolve) { flag in
+        show(view: newView, animated: animated)
+    }
+
+    private func removeCurrentView(animated: Bool) {
+        let currentView = self.currentView
+        self.currentView = nil
+        UIView.animate(withDuration: animated ? 0.3 : 0, animations: {
+            currentView?.alpha = 0
+        }) { _ in
+            currentView?.removeFromSuperview()
+        }
+    }
+
+    private func show(view: UIView, animated: Bool) {
+        self.view?.embedSubview(view)
+
+        guard let currentView = currentView else {
+            return UIView.animate(withDuration: animated ? 0.3 : 0.0){
+                view.alpha = 1
+            }
+        }
+        view.alpha = 1
+        UIView.transition(from: currentView, to: view, duration: animated ? 0.3 : 0.0, options: .transitionCrossDissolve) { _ in
+            currentView.removeFromSuperview()
         }
     }
     
-    public func removeAllViews(animated: Bool) {
-        UIView.animate(withDuration: animated ? 0.3 : 0.0, animations: {
-            self.currentView?.alpha = 0
-        }) { flag in
-            for (_, view) in self.views {
-                view.removeFromSuperview()
-            }
-            self.views = [:]
-            self.currentView = nil
-        }
-    }
 }
